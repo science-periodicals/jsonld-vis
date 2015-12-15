@@ -23,8 +23,22 @@
     var svg = d3.select(selector).append('svg')
       .attr('width', w)
       .attr('height', h)
-        .append('g')
-        .attr('transform', 'translate(' + maxLabelWidth + ',0)');
+      .append('g')
+      .attr('transform', 'translate(' + maxLabelWidth + ',0)');
+
+    var tip = d3.tip()
+      .direction(function(d) {
+        return d.children || d._children ? 'w' : 'e';
+      })
+      .offset(function(d) {
+        return d.children || d._children ? [0, -3] : [0, 3];
+      })
+      .attr('class', 'd3-tip')
+      .html(function(d) {
+        return '<span>' + d.valueExtended + '</span>';
+      });
+
+    svg.call(tip);
 
     var root = jsonldTree(jsonld);
     root.x0 = h / 2;
@@ -52,23 +66,34 @@
       var children = [];
       Object.keys(source).forEach(function(key) {
         if (key === '@id' || source[key] === null) return;
-        if (typeof source[key] === 'object') {
+
+        var valueExtended, value;
+        if (typeof source[key] === 'object' && !Array.isArray(source[key])) {
           children.push({
             name: key,
             children: [jsonldTree(source[key])]
           });
         } else if (Array.isArray(source[key])) {
-          source[key].forEach(function(obj) {
-            children.push({
-              name: key,
-              children: [jsonldTree(obj)]
-            });
-          });
-        } else {
           children.push({
             name: key,
-            value: source[key]
+            children: source[key].map(function(obj) { return jsonldTree(obj); })
           });
+        } else {
+          valueExtended = source[key];
+          value = valueExtended;
+          if (value.length > maxLabelWidth / 10) {
+            value = value.slice(0, Math.floor(maxLabelWidth / 10)) + '...';
+            children.push({
+              name: key,
+              value: value,
+              valueExtended: valueExtended
+            });
+          } else {
+            children.push({
+              name: key,
+              value: value
+            });
+          }
         }
       });
 
@@ -108,7 +133,9 @@
           } else {
             return d._children ? '#86E2D5' : 'white';
           }
-        });
+        })
+        .on('mouseover', function(d) { if (d.valueExtended) tip.show(d); })
+        .on('mouseout', tip.hide);
 
       nodeEnter.append('text')
         .attr('x', function(d) {

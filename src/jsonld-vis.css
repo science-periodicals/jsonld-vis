@@ -14,6 +14,18 @@ svg {
   fill: #333333;
 }
 
+.d3-tip {
+  font-size: 14px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333333;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 10px 20px;
+  max-width: 250px;
+  word-wrap: normal;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .link {
   fill: none;
   stroke: #DADFE1;
