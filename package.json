@@ -1,0 +1,31 @@
+{
+  "name": "jsonld-vis",
+  "version": "0.0.0",
+  "description": "Turns JSON-LD into pretty graphs",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scienceai/jsonld-vis.git"
+  },
+  "keywords": [
+    "JSONLD",
+    "JSON-LD",
+    "d3",
+    "visualization",
+    "graph",
+    "linked",
+    "data"
+  ],
+  "author": "Leon Chen <leon@standardanalytics.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/scienceai/jsonld-vis/issues"
+  },
+  "homepage": "https://github.com/scienceai/jsonld-vis#readme",
+  "devDependencies": {
+    "eslint": "^1.10.3"
+  }
+}
