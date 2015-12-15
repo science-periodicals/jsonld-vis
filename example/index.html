@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../src/jsonld-vis.css">
+    <title>jsonld-vis example</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="graph"></div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.11/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
+    <script type="text/javascript" src="../src/jsonld-vis.js"></script>
+    <script type="text/javascript">
+
+      d3.json('example.json', function(err, data) {
+        if (err) return console.warn(err);
+        d3.jsonldVis(data, '#graph', { w: 800, h: 600, maxLabelWidth: 250 });
+      });
+
+    </script>
+  </body>
+</html>
