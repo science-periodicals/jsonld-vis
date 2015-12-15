@@ -1,0 +1,21 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+
+svg {
+  border: none;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node text {
+  font-size: 12px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  fill: #333333;
+}
+
+.link {
+  fill: none;
+  stroke: #DADFE1;
+  stroke-width: 1px;
+}
