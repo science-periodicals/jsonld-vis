@@ -1,8 +1,8 @@
 {
   "name": "jsonld-vis",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Turns JSON-LD into pretty graphs",
-  "main": "dist/index.js",
+  "main": "src/jsonld-vis.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
