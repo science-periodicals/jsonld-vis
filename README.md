@@ -3,13 +3,13 @@
 Turn JSON-LD into pretty graphs
 
 <p align="center">
-  <img src="example/screen1.png" width="400" />
+  <img src="example/screen1.png" width="600" />
 </p>
 <p align="center">
-  <img src="example/screen3.png" width="400" />
+  <img src="example/screen3.png" width="600" />
 </p>
 <p align="center">
-  <img src="example/screen5.png" width="400" />
+  <img src="example/screen5.png" width="600" />
 </p>
 
 ### Usage
@@ -42,13 +42,13 @@ Where the optional `config` variable is as follows:
 }
 ```
 
-The width is for initialization purposes. The width of the svg element will dynamically be adjusted as necessary.
+Specifying the width is just for initialization purposes. The width of the svg element will dynamically be adjusted as necessary.
 
-For any labels that are smaller than maximum label width, hover over the node to see the full label:
+Labels that are longer than maximum label width are truncated - hover over the node to see the full label:
 
 <p align="center">
-  <img src="example/screen2.png" height="150" />
-  <img src="example/screen4.png" height="150" />
+  <img src="example/screen2.png" height="200" />
+  <img src="example/screen4.png" height="200" />
 </p>
 
 ### License
