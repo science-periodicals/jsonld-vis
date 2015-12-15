@@ -262,9 +262,8 @@
   }
 
   if (typeof module !== 'undefined' && module.exports) {
-		module.exports = jsonldVis;
-	}
-	else {
-		d3.jsonldVis = jsonldVis;
-	}
+    module.exports = jsonldVis;
+  } else {
+    d3.jsonldVis = jsonldVis;
+  }
 })();

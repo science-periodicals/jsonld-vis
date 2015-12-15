@@ -33,11 +33,11 @@ Where the optional `config` variable is as follows:
 
 ```js
 {
-  h: 600, //height
-  w: 800, //width
+  h: 600, // height
+  w: 800, // width
   maxLabelWidth: 250, // maximum label width
   transitionDuration: 750, // transition duration, in ms
-  transitionEase: 'cubic-in-out', // trasition easing function
+  transitionEase: 'cubic-in-out', // transition easing function
   radius: 5 // minimum node radius
 }
 ```
