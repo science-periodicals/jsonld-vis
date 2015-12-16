@@ -2,6 +2,8 @@
 
 Turn JSON-LD into pretty graphs
 
+**[EXAMPLE](https://scienceai.github.io/jsonld-vis)**
+
 <p align="center">
   <img src="example/screen1.png" width="600" />
 </p>
@@ -27,7 +29,7 @@ d3.json('example.json', function(err, data) {
 });
 ```
 
-#### d3.jsonldVis(data, querySelector[, config])
+#### `d3.jsonldVis(data, querySelector[, config])`
 
 Where the optional `config` variable is as follows:
 
@@ -42,9 +44,15 @@ Where the optional `config` variable is as follows:
 }
 ```
 
-Specifying the width is just for initialization purposes. The width of the svg element will dynamically be adjusted as necessary.
+Specifying the width is just for initialization purposes. The width of the svg element will dynamically be adjusted as necessary. For horizontal auto-scrolling, the specified `querySelector` must have horizontal scroll enabled:
 
-Labels that are longer than maximum label width are truncated - hover over the node to see the full label:
+```css
+query-selector {
+  overflow-x: scroll;
+}
+```
+
+Labels that are longer than maximum label width are truncated; hover over the node to see the full label:
 
 <p align="center">
   <img src="example/screen2.png" height="200" />
