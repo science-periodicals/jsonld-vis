@@ -1,0 +1,11 @@
+html {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+#graph {
+  overflow-x: scroll;
+}
