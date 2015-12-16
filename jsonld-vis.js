@@ -47,7 +47,7 @@
 
     function changeSVGWidth(newWidth) {
       if (w !== newWidth) {
-        d3.select(selector + ' > svg').style('width', newWidth);
+        d3.select(selector + ' > svg').attr('width', newWidth);
       }
     }
 
@@ -59,6 +59,7 @@
         tree.name = source['@id'];
       } else {
         tree.isIdNode = true;
+        tree.isBlankNode = true;
         // random id, can replace with actual uuid generator if needed
         tree.name = '_' + Math.random().toString(10).slice(-7);
       }
@@ -253,7 +254,17 @@
         d.children = d._children;
         d._children = null;
       }
+
       update(d);
+
+      // fast-forward blank nodes
+      if (d.children) {
+        d.children.forEach(function(child) {
+          if (child.isBlankNode && child._children) {
+            click(child);
+          }
+        });
+      }
     }
 
     function collapse(d) {
