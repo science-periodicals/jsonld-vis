@@ -76,7 +76,13 @@
         } else if (Array.isArray(source[key])) {
           children.push({
             name: key,
-            children: source[key].map(function(obj) { return jsonldTree(obj); })
+            children: source[key].map(function(item) {
+              if (typeof item === 'object') {
+                return jsonldTree(item);
+              } else {
+                return { name: item };
+              }
+            })
           });
         } else {
           valueExtended = source[key];
