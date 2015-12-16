@@ -156,7 +156,7 @@
       var maxSpan = Math.max.apply(Math, nodes.map(function(d) { return d.y + maxLabelWidth; }));
       if (maxSpan + maxLabelWidth + 20 > w) {
         changeSVGWidth(maxSpan + maxLabelWidth);
-        window.scroll(source.y0, 0);
+        d3.select(selector).node().scrollLeft = source.y0;
       }
 
       var nodeUpdate = node.transition()
