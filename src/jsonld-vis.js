@@ -47,7 +47,7 @@
 
     function changeSVGWidth(newWidth) {
       if (w !== newWidth) {
-        d3.select(selector + ' > svg').style('width', newWidth);
+        d3.select(selector + ' > svg').attr('width', newWidth);
       }
     }
 
@@ -254,7 +254,7 @@
         d.children = d._children;
         d._children = null;
       }
-      
+
       update(d);
 
       // fast-forward blank nodes
