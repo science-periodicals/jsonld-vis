@@ -65,7 +65,7 @@
 
       var children = [];
       Object.keys(source).forEach(function(key) {
-        if (key === '@id' || source[key] === null) return;
+        if (key === '@id' || key === '@context' || source[key] === null) return;
 
         var valueExtended, value;
         if (typeof source[key] === 'object' && !Array.isArray(source[key])) {
