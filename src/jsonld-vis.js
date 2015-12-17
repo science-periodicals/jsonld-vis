@@ -58,6 +58,10 @@
       if ('@id' in source) {
         tree.isIdNode = true;
         tree.name = source['@id'];
+        if (tree.name.length > maxLabelWidth / 9) {
+          tree.valueExtended = tree.name;
+          tree.name = '...' + tree.valueExtended.slice(-Math.floor(maxLabelWidth / 9));
+        }
       } else {
         tree.isIdNode = true;
         tree.isBlankNode = true;
@@ -89,8 +93,8 @@
         } else {
           valueExtended = source[key];
           value = valueExtended;
-          if (value.length > maxLabelWidth / 10) {
-            value = value.slice(0, Math.floor(maxLabelWidth / 10)) + '...';
+          if (value.length > maxLabelWidth / 9) {
+            value = value.slice(0, Math.floor(maxLabelWidth / 9)) + '...';
             children.push({
               name: key,
               value: value,
