@@ -40,7 +40,8 @@ Where the optional `config` variable is as follows:
   maxLabelWidth: 250, // maximum label width
   transitionDuration: 750, // transition duration, in ms
   transitionEase: 'cubic-in-out', // transition easing function
-  radius: 5 // minimum node radius
+  minRadius: 5 // minimum node radius
+  scalingFactor: 2 // factor to scale node sizes
 }
 ```
 
@@ -51,6 +52,8 @@ query-selector {
   overflow-x: scroll;
 }
 ```
+
+For large data, it may be necessary to adjust the scaling so that node sizes still look reasonable. The `scalingFactor` allows adjustment of this - larger values of `scalingFactor` will reduce the maximum node size.
 
 Labels that are longer than maximum label width are truncated; hover over the node to see the full label:
 
