@@ -10,7 +10,8 @@
       , maxLabelWidth = config.maxLabelWidth || 250
       , transitionDuration = config.transitionDuration || 750
       , transitionEase = config.transitionEase || 'cubic-in-out'
-      , radius = config.radius || 5;
+      , minRadius = config.minRadius || 5
+      , scalingFactor = config.scalingFactor || 2;
 
     var i = 0;
 
@@ -224,9 +225,9 @@
 
     function computeRadius(d) {
       if (d.children || d._children) {
-        return radius + (radius * numEndNodes(d) / 10);
+        return minRadius + (numEndNodes(d) / scalingFactor);
       } else {
-        return radius;
+        return minRadius;
       }
     }
 
