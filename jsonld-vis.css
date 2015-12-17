@@ -22,8 +22,9 @@ svg {
   border-radius: 5px;
   padding: 10px 20px;
   max-width: 250px;
-  word-wrap: normal;
+  word-wrap: break-word;
   background-color: rgba(255, 255, 255, 0.9);
+  text-align: left;
 }
 
 .link {
