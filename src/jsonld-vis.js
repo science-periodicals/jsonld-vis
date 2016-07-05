@@ -7,7 +7,11 @@ import d3Tip from 'd3-tip';
 
 d3Tip(d3);
 
-export default function jsonldVis (jsonld, selector, config = {}) {
+export default function (d3) {
+  d3.jsonldVis = jsonldVis;
+}
+
+function jsonldVis (jsonld, selector, config = {}) {
   if (!jsonld && !selector) return jsonldVis;
 
   let h = config.h || 600
@@ -240,5 +244,3 @@ export default function jsonldVis (jsonld, selector, config = {}) {
   }
   update(root);
 }
-
-d3.jsonldVis = jsonldVis;
