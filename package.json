@@ -1,6 +1,6 @@
 {
   "name": "jsonld-vis",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Turns JSON-LD into pretty graphs",
   "main": "dist/jsonld-vis.js",
   "scripts": {
