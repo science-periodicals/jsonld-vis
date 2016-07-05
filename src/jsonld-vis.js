@@ -60,7 +60,7 @@ function jsonldVis (jsonld, selector, config = {}) {
       tree.isIdNode = true;
       tree.isBlankNode = true;
       // random id, can replace with actual uuid generator if needed
-      tree.name = '_' + Math.random().toString(10).slice(-7);
+      tree.name = '_:b' + Math.random().toString(10).slice(-7);
     }
 
     let children = [];
