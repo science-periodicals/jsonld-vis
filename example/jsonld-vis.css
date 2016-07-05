@@ -1,16 +1,4 @@
-html {
-  text-align: center;
-}
-
-.container {
-  margin: 0 auto;
-}
-
-#graph {
-  overflow-x: autho;
-}
-
-/* NOTE brutally copied over from the real style */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
 svg {
   border: none;
@@ -23,14 +11,14 @@ svg {
 .node text {
   font-size: 12px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  fill: #333;
+  fill: #333333;
 }
 
 .d3-tip {
   font-size: 14px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  color: #333;
-  border: 1px solid #ccc;
+  color: #333333;
+  border: 1px solid #CCCCCC;
   border-radius: 5px;
   padding: 10px 20px;
   max-width: 250px;
@@ -41,7 +29,6 @@ svg {
 
 .link {
   fill: none;
-  stroke: #dadfe1;
+  stroke: #DADFE1;
   stroke-width: 1px;
-  overflow-x: auto;
 }
