@@ -4,7 +4,7 @@
   "description": "Turns JSON-LD into pretty graphs",
   "main": "dist/jsonld-vis.js",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && npm run subtree-push",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=\"production\" babel src/ -d dist/",
     "build-example": "browserify example/example.js -v -o example/example.min.js",
