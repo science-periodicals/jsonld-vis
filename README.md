@@ -1,29 +1,26 @@
+
 # JSON-LD visualization
 
-Turn JSON-LD into pretty graphs
+Turn JSON-LD into pretty graphs. See the
+**[online example](https://scienceai.github.io/jsonld-vis)**.
 
-**[EXAMPLE](https://scienceai.github.io/jsonld-vis)**
+![Folded view of JSON tree](example/screen1.png)
 
-<p align="center">
-  <img src="example/screen1.png" width="600" />
-</p>
-<p align="center">
-  <img src="example/screen3.png" width="600" />
-</p>
-<p align="center">
-  <img src="example/screen5.png" width="600" />
-</p>
+![Partly unfolded view of JSON tree](example/screen3.png)
+
+![Fully unfolded view of JSON tree](example/screen5.png)
 
 ### Usage
 
 See the `examples/` folder for usage details.
 
-Import `jsonld-vis.js` and `jsonld-vis.css`. Be sure to include the dependencies `d3` and `d3-tip`.
+Import `jsonld-vis.js` and `jsonld-vis.css`.
 
-To initialize, simply load data into the `jsonldVis` function:
+To initialize, simply load data into the exported `jsonldVis` function:
 
 ```js
-d3.json('example.json', function(err, data) {
+import jsonldVis from 'jsonld-vis';
+d3.json('example.json', (err, data) => {
   if (err) return console.warn(err);
   d3.jsonldVis(data, '#graph', { w: 800, h: 600, maxLabelWidth: 250 });
 });
@@ -45,22 +42,25 @@ Where the optional `config` variable is as follows:
 }
 ```
 
-Specifying the width is just for initialization purposes. The width of the svg element will dynamically be adjusted as necessary. For horizontal auto-scrolling, the specified `querySelector` must have horizontal scroll enabled:
+Specifying the width is just for initialization purposes. The width of the svg element will
+dynamically be adjusted as necessary. For horizontal auto-scrolling, the specified `querySelector`
+must have horizontal scroll enabled:
 
 ```css
 query-selector {
-  overflow-x: scroll;
+  overflow-x: autho;
 }
 ```
 
-For large data, it may be necessary to adjust the scaling so that node sizes still look reasonable. The `scalingFactor` allows adjustment of this - larger values of `scalingFactor` will reduce the maximum node size.
+For large data, it may be necessary to adjust the scaling so that node sizes still look reasonable.
+The `scalingFactor` allows adjustment of this - larger values of `scalingFactor` will reduce the
+maximum node size.
 
-Labels that are longer than maximum label width are truncated; hover over the node to see the full label:
+Labels that are longer than maximum label width are truncated; hover over the node to see the full
+label:
 
-<p align="center">
-  <img src="example/screen2.png" height="200" />
-  <img src="example/screen4.png" height="200" />
-</p>
+![Truncated label](example/screen2.png)
+![Hover text](example/screen4.png)
 
 ### License
 
