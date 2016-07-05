@@ -14,11 +14,13 @@ Turn JSON-LD into pretty graphs. See the
 
 See the `examples/` folder for usage details.
 
-Import `jsonld-vis.js` and `jsonld-vis.css`.
+Import `jsonld-vis.js` and `jsonld-vis.css`. The CSS may look better if 'Open Sans' is available as
+a font (but it will work without it).
 
 To initialize, simply load data into the exported `jsonldVis` function:
 
 ```js
+import d3 from 'd3';
 import jsonldVis from 'jsonld-vis';
 d3.json('example.json', (err, data) => {
   if (err) return console.warn(err);
