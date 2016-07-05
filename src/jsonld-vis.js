@@ -1,8 +1,11 @@
 
+/* globals d3 */
 /* eslint no-shadow: "off" */
 
 import d3 from 'd3';
-require('d3-tip'); // XXX
+import d3Tip from 'd3-tip';
+
+d3Tip(d3);
 
 export default function jsonldVis (jsonld, selector, config = {}) {
   if (!jsonld && !selector) return jsonldVis;
@@ -134,6 +137,8 @@ export default function jsonldVis (jsonld, selector, config = {}) {
               .attr('text-anchor', d => (d.children || d._children ? 'end' : 'start'))
               .text(d => (d.name + (d.value ? ': ' + d.value : '')))
               .style('fill-opacity', 0)
+              .on('mouseover', d => { if (d.valueExtended) tip.show(d); })
+              .on('mouseout', tip.hide)
     ;
     let maxSpan = Math.max.apply(Math, nodes.map(d => d.y + maxLabelWidth));
     if (maxSpan + maxLabelWidth + 20 > w) {
@@ -235,3 +240,5 @@ export default function jsonldVis (jsonld, selector, config = {}) {
   }
   update(root);
 }
+
+d3.jsonldVis = jsonldVis;
