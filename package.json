@@ -1,15 +1,15 @@
 {
   "name": "jsonld-vis",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Turns JSON-LD into pretty graphs",
-  "main": "dist/jsonld-vis.js",
+  "style": "src/index.css",
+  "main": "dist/index.js",
   "scripts": {
-    "prepublish": "npm run build && npm run build-example && npm run subtree-push",
+    "prepublish": "npm run build",
+    "format": "prettier --single-quote --write \"{src,test}/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=\"production\" babel src/ -d dist/",
-    "build-example": "browserify example/example.js -v -o example/example.min.js",
-    "watch-example": "watchify example/example.js -v -o example/example.min.js",
-    "subtree-push": "git subtree push --prefix example origin gh-pages"
+    "watch": "watchify example/index.js -dv -o example/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "linked",
     "data"
   ],
-  "author": "Leon Chen <leon@standardanalytics.io>",
+  "author": "Leon Chen",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/scienceai/jsonld-vis/issues"
@@ -44,15 +44,16 @@
     ]
   },
   "devDependencies": {
-    "babel-preset-es2015": "6.9.0",
+    "babel-preset-es2015": "^6.24.1",
     "babelify": "7.3.0",
-    "browserify": "13.0.1",
-    "eslint-config-scienceai": "1.4.2",
-    "watchify": "3.7.0"
+    "browserify": "^14.4.0",
+    "eslint-config-scienceai": "^3.3.0",
+    "prettier": "^1.5.3",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
-    "babel-cli": "6.10.1",
-    "d3": "3.5.17",
+    "babel-cli": "^6.24.1",
+    "d3": "^3.5.17",
     "d3-tip": "0.6.7"
   }
 }

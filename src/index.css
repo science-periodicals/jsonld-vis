@@ -1,5 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
-
 svg {
   border: none;
 }
@@ -11,14 +9,14 @@ svg {
 .node text {
   font-size: 12px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  fill: #333333;
+  fill: #333;
 }
 
 .d3-tip {
   font-size: 14px;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  color: #333333;
-  border: 1px solid #CCCCCC;
+  color: #333;
+  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px 20px;
   max-width: 250px;
@@ -29,6 +27,6 @@ svg {
 
 .link {
   fill: none;
-  stroke: #DADFE1;
+  stroke: #dadfe1;
   stroke-width: 1px;
 }

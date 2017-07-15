@@ -1,8 +1,8 @@
-
 # JSON-LD visualization
 
-Turn JSON-LD into pretty graphs. See the
-**[online example](https://scienceai.github.io/jsonld-vis)**.
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+
+Turn JSON-LD into pretty graphs.
 
 ![Folded view of JSON tree](example/screen1.png)
 
