@@ -34,7 +34,10 @@ export default function(d3) {
         .tip()
         .direction(d => (d.children || d._children ? 'w' : 'e'))
         .offset(d => (d.children || d._children ? [0, -3] : [0, 3]))
-        .attr('class', 'd3-tip')
+        .attr(
+          'class',
+          'd3-tip' + (config.tipClassName ? ` ${config.tipClassName}` : '')
+        )
         .html(d => '<span>' + d.valueExtended + '</span>');
     svg.call(tip);
 
