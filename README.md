@@ -68,4 +68,4 @@ label:
 
 ### License
 
-[Apache 2.0](https://github.com/scienceai/jsonld-vis/blob/master/LICENSE)
+[Apache 2.0](https://github.com/science-periodicals/jsonld-vis/blob/master/LICENSE)
